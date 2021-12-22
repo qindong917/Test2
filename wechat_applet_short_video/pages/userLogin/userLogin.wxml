@@ -1,0 +1,32 @@
+<!-- 登录界面 -->
+<view>
+  <view>
+    <image class="images" src="../../img/imags/fengjing.jpg" mode="scaleToFill"></image>
+  </view>
+  <view>
+    <form bindsubmit="doLogin">
+    <!-- 账号-->
+      <view class="inputView">
+        <image class="nameImage" src="../../img/icon/用户.png" ></image>
+        <label for="username" class="nameText">账号</label>
+        <input class="nameInput" id="username" name="username" placeholder="请输入账号" value="123"></input>
+      </view>
+
+      <view class="line"></view>
+
+    <!-- 密码-->
+      <view class="inputView">
+        <image class="pwdImage" src="../../img/icon/密码.png"></image>
+        <label for="password" class="pwdText">密码</label>
+        <input class="pwdInput" id="password" name="password" password="true" placeholder="请输入密码" value="123"></input>
+      </view>
+    
+      <view>
+        <text class="registerText" style="" bindtap="goRegister">没有账号？立即注册</text>
+      </view>
+      <view>
+        <button class="loginButton" type="primary" form-type="submit" style="background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">登录</button>
+      </view>
+    </form>
+  </view>
+</view>

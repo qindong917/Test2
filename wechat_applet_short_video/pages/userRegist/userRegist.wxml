@@ -1,0 +1,32 @@
+<!-- 登录界面 -->
+<view>
+  <view>
+    <image class="images" src="../../img/imags/fengjing.jpg" mode="scaleToFill"></image>
+  </view>
+  <view>
+    <form bindsubmit="doRegister" style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);">
+    <!-- 账号-->
+      <view class="inputView">
+        <image class="nameImage" src="../../img/icon/用户.png" ></image>
+        <label class="nameText">账号</label>
+        <input class="nameInput" name="username" placeholder="请输入账号"></input>
+      </view>
+
+      <view class="line"></view>
+
+    <!-- 密码-->
+      <view class="inputView">
+        <image class="pwdImage" src="../../img/icon/密码.png"></image>
+        <label class="pwdText">密码</label>
+        <input class="pwdInput" name="password" password="true" placeholder="请输入密码"></input>
+      </view>
+    
+      <view>
+        <button class="rgsButton" type="primary" form-type="submit" style="background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">注册</button>
+      </view>
+      <view>
+        <button class="loginButton" type="primary" bindtap="goLogin" style="background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);">返回登录</button>
+      </view>
+    </form>
+  </view>
+</view>

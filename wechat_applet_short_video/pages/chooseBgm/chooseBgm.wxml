@@ -1,0 +1,24 @@
+<view>
+  <form bindsubmit='uploadvideo'>
+
+    <scroll-view scroll-y="true" style="height:350px">
+      <radio-group name="bgmId">
+        <block wx:for="{{bgmList}}" wx:key="bgmList">
+          <view class='container' style="height:50%">
+            <audio name="{{item.name}}" author="{{item.author}}" src="{{serverurl}}{{item.path}}"  style="width:80%;margin-left:20px" id="myAudio" controls="true" loop="true"></audio>
+            <radio style="margin-top:20px;float:right" value='{{item.id}}'></radio>
+          </view>
+        </block>
+      </radio-group>
+    </scroll-view>
+
+    <view class="videoView">
+      <label class="videoLabel">视频描述：</label>
+      <input name="desc" class="inputText" placeholder="说点什么吧" />
+    </view>   
+
+    <!-- 提交 -->
+    <button class="submitBtn" type="primary" form-type="submit">上传视频</button>
+    <button class="gobackBtn" type="warn" form-type='reset'>重置</button>
+  </form>
+</view>
