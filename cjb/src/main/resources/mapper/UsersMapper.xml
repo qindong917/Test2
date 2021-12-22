@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qd.cjb.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.qd.cjb.pojo.Users">
+
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="face_image" jdbcType="VARCHAR" property="faceImage" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="fans_counts" jdbcType="INTEGER" property="fansCounts" />
+    <result column="follow_counts" jdbcType="INTEGER" property="followCounts" />
+    <result column="receive_like_counts" jdbcType="INTEGER" property="receiveLikeCounts" />
+  </resultMap>
+<!--  <resultMap id="BaseResultMap" type="nuc.edu.hjx.pojo.Users">-->
+<!--    &lt;!&ndash;-->
+<!--      WARNING - @mbg.generated-->
+<!--    &ndash;&gt;-->
+<!--    <result column="USER" jdbcType="CHAR" property="user" />-->
+<!--    <result column="CURRENT_CONNECTIONS" jdbcType="BIGINT" property="currentConnections" />-->
+<!--    <result column="TOTAL_CONNECTIONS" jdbcType="BIGINT" property="totalConnections" />-->
+<!--  </resultMap>-->
+
+  <update id="addLikeCounts" parameterType="String">
+    update users set receive_like_counts = receive_like_counts+1 where id=#{userId}
+  </update>
+
+  <update id="reduceLikeCounts" parameterType="String">
+    update users set receive_like_counts = receive_like_counts-1 where id=#{userId}
+  </update>
+
+  <update id="addFans" parameterType="String">
+    update users set fans_counts = fans_counts + 1 where id=#{userId}
+  </update>
+
+  <update id="reduceFans" parameterType="String">
+    update users set fanscounts = fanscounts - 1 where id=#{userId}
+  </update>
+
+  <update id="addFollow" parameterType="String">
+    update users set follow_counts = follow_counts + 1 where id=#{userId}
+  </update>
+
+  <update id="reduceFollow" parameterType="String">
+    update users set follow_counts = follow_counts - 1 where id=#{userId}
+  </update>
+</mapper>
